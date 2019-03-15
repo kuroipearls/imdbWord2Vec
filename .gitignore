@@ -11,3 +11,6 @@ movie_data.csv
 
 # word2vec vector
 imdb_embed_word2vec.txt
+
+# h5py files
+*.h5

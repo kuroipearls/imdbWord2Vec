@@ -12,6 +12,7 @@ from keras.models import Sequential
 from keras.layers import Dense, Embedding, LSTM, GRU
 from keras.layers.embeddings import Embedding
 from keras.initializers import Constant
+from keras_tqdm import TQDMCallback
 
 # read data, total 50000 records 
 df = pd.DataFrame()
@@ -120,4 +121,5 @@ X_test_pad = review_pad[-num_validation_samples:]
 y_test = sentiment[-num_validation_samples:]
 
 # train the network 
-# model.fit(X_train_pad, y_train, batch_size=128, epochs=25, validation_data=(X_test_pad, y_test), verbose=2)
+model.fit(X_train_pad, y_train, batch_size=128, epochs=3, validation_data=(X_test_pad, y_test), verbose=2, callbacks=[TQDMCallback()])
+model.save('modelGRU.h5')

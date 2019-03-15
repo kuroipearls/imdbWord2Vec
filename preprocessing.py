@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+
 folder = 'dataset'
 labels = {'pos': 1, 'neg': 0}
 df = pd.DataFrame()
